@@ -26,7 +26,7 @@
                 <input type="hidden" name="idSesion" value="998877">
                 <p><strong>Precio: </strong><span id="pesos">{{ precio }}</span></p>
                 <input type="hidden" name="monto" value="{{ precio }}">
-                <button type="submit">Pagar</button>
+                <button type="submit">Verificar</button>
             </form>
             {% if url and token %}
             <form method="post" action="{{ url }}">
@@ -37,10 +37,18 @@
             {% endif %}
 
 
+            <!-- 
             <div>
                 <h2>Response:</h2>
                 <pre>{{ response|safe }}</pre>
             </div>
+         -->
+
+            <div style="display: none;">
+                <h2>Response:</h2>
+                <pre>{{ response|safe }}</pre>
+            </div>
+
         </div>
 
     </div>

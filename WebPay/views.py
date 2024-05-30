@@ -37,7 +37,7 @@ def procesar_pago(request):
         'buy_order': buy_order,
     }
 
-    return render(request, 'htmls/Pagar.html', context)
+    return render(request, 'htmls/Webpay.html', context)
 
 def pago(request):
     buy_order = request.POST["ordenCompra"]

@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'WebPay.context_processor.total_carrito'
             ],
         },
     },
@@ -74,10 +75,24 @@ WSGI_APPLICATION = 'integracion.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+'''DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME":"sys ",
+        "USER":"root",
+        "PASSWORD":"admin",
+        "HOST":"localhost",
+        "PORT":"3306",
+    }
+}'''
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME":"Ferreteria",
+        "USER":"root",
+        "PASSWORD":"admin",
+        "HOST":"localhost",
+        "PORT":"3306",
     }
 }
 

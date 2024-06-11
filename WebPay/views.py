@@ -1,17 +1,24 @@
 from django.shortcuts import render , redirect
+from .context_processor import total_carrito
 from .Carrito import Carrito 
 from .models import Producto
 from transbank.webpay.webpay_plus.transaction import Transaction, WebpayOptions, IntegrationCommerceCodes, IntegrationApiKeys
 from transbank.common.integration_type import IntegrationType
-
+import re
 
 # Create your views here.
 
 def index(request):
     return render(request,"htmls/index.html")
 
+def filtrar_numeros(cadena):
+    numeros = re.findall(r'\d+', cadena)
+    numeros_concatenados = ''.join(numeros)
+    return numeros_concatenados
+
 def Pagar(request):
-    precio = request.POST["valor"]
+    total_carrito_str = total_carrito(request)
+    precio = filtrar_numeros(str(total_carrito_str))
     return render(request,"htmls/Pagar.html", {'precio': precio})
 
 def Webpay(request):

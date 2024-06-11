@@ -1,4 +1,4 @@
-from decimal import Decimal 
+#from decimal import Decimal 
 class Carrito:
     def __init__(self, request):
         self.request = request
@@ -46,5 +46,6 @@ class Carrito:
         self.session["carrito"] = {}
         self.session.modified = True
 
-    def total_total(self):
-        return sum(Decimal(item['acumulado']) for item in self.carrito.values())
+
+   # def total_total(self):
+    #    return sum(Decimal(item['acumulado']) for item in self.carrito.values())
